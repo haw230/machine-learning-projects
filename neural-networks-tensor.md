@@ -21,7 +21,7 @@ mnist = input_data.read_data_sets("/tmp/data/", one_hot=True) #all or nothing
 
 * one\_hot means only one is on for binary ([1, 0, 0, 0], [0, 1, 0, 0])
 
-```
+```python
 n_nodes_hl1 = 500 #hidden layer 1, 500 nodes
 n_nodes_hl2 = 500
 n_nodes_hl3 = 500
