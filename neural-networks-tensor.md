@@ -38,7 +38,7 @@ def neural_network_model(data):
     #rows of previous by rows of this
     #and random values inside that shape
 
-    #1st layer takes matrix x, weights will be 784 rows by 500 columns
+    #1st layer takes matrix x, weights will be x rows by hidden layer 1 columns
     hidden_1_layer = {'weights' : tf.Variable(tf.random_normal([784, n_nodes_hl1])),
                       #n_nodes_hl1 must be in array
                       'biases' : tf.Variable(tf.random_normal([n_nodes_hl1]))}
@@ -48,19 +48,19 @@ def neural_network_model(data):
     '''
     Columns of previous matrix/layer decides whether or not it can be computered.
     For example, if input is 2x2 and 1st layer is 2x3, 2nd layer will use 3 as
-    its row to successfully apply the calculation.
+    its row to successfully apply the calculation. "takes" means will be multiplied by
     '''
-    #layer 2 takes layer 1, weights will be 500 rows by 500 columns
+    #layer 2 takes layer 1, weights will be hidden layer 1 rows by hidden layer 2 columns
     hidden_2_layer = {'weights' : tf.Variable(tf.random_normal([n_nodes_hl1, n_nodes_hl2])),
                       #n_nodes_hl1 must be in array
                       'biases' : tf.Variable(tf.random_normal([n_nodes_hl2]))}
     
-    #layer 3 takes layer 2, weights will be 500 rows by 500 columns
+    #layer 3 takes layer 2, weights will be hl2 rows by hl3 columns
     hidden_3_layer = {'weights' : tf.Variable(tf.random_normal([n_nodes_hl2, n_nodes_hl3])),
                       #n_nodes_hl1 must be in array
                       'biases' : tf.Variable(tf.random_normal([n_nodes_hl3]))}
     
-    
-    output_layer = {'weights' : tf.Variable(tf.random_normal([784, n_nodes_hl1])),
+    #output takes layer 3, output will be hl3 columns by classes
+    output_layer = {'weights' : tf.Variable(tf.random_normal([n_nodes_hl3, n_classes])),
                       #n_nodes_hl1 must be in array
                       'biases' : tf.Variable(tf.random_normal([n_classes]))}
