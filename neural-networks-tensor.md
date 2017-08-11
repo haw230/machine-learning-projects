@@ -1,5 +1,5 @@
 # Neural Networks with TensorFlow
-
+https://www.youtube.com/watch?v=BhpvH5DuVu8&index=46&list=PLQVvvaa0QuDfKTOs3Keq_kaG2P55YRn5v
 ```python
 import tensorflow as tf
 ```
