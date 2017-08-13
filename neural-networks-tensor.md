@@ -64,3 +64,4 @@ def neural_network_model(data):
     output_layer = {'weights' : tf.Variable(tf.random_normal([n_nodes_hl3, n_classes])),
                       #n_nodes_hl1 must be in array
                       'biases' : tf.Variable(tf.random_normal([n_classes]))}
+```
